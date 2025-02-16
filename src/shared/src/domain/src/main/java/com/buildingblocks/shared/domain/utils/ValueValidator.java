@@ -8,6 +8,7 @@ public class ValueValidator {
     private static final Set<String> VALID_TYPES = Set.of("Cotton Mill", "Coal Mine", "Iron Work", "Manufacturer", "Pottery", "Brewery");
     private static final Set<String> VALID_ERAS = Set.of("Canals", "Rails");
     private static final Set<String> VALID_RESOURCES = Set.of("Iron", "Coal");
+    private static final Set<String> VALID_TRADE_TYPES = Set.of("Buy", "Sell");
 
     public static void validateNotNull(Object value, String fieldName) {
         if (Objects.isNull(value)) {
@@ -72,6 +73,12 @@ public class ValueValidator {
     public static void validateSpecialCharacters(String value, String fieldName) {
         if (!value.matches("^[a-zA-Z ]+$")) {
             throw new IllegalArgumentException(fieldName + " must contain only letters and spaces");
+        }
+    }
+
+    public static void validateTradeType(String value, String fieldName) {
+        if (!VALID_TRADE_TYPES.contains(value)) {
+            throw new IllegalArgumentException(fieldName + " must be either 'Buy' or 'Sell'");
         }
     }
 }
