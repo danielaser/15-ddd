@@ -81,4 +81,5 @@ public class ValueValidator {
             throw new IllegalArgumentException(fieldName + " must be either 'Buy' or 'Sell'");
         }
     }
+
 }

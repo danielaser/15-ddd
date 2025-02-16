@@ -1,7 +1,6 @@
 package com.buildingblocks.industries.domain.industry.events;
 
 import com.buildingblocks.shared.domain.generic.DomainEvent;
-import jdk.jfr.Event;
 
 public class ConsumedResource extends DomainEvent {
     private final String id;
