@@ -24,7 +24,7 @@ public class Loan  extends Entity<LoanId> {
     // endregion
 
     // region Public Methods
-    public void takeLoan(Amount amount) {
+    public void take(Amount amount) {
         if (amount.getValue() <= 0 || amount.getValue() % 10 != 0 || amount.getValue() > 30) {
             throw new IllegalArgumentException("The loan must be in increments of 10, greater than 0 and cannot exceed 30");
         }

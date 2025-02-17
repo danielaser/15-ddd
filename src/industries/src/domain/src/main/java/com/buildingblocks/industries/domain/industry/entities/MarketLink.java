@@ -28,7 +28,7 @@ public class MarketLink extends Entity<MarketLinkId> {
     // endregion
 
     // region Public Methods
-    public void activateMarketLink() {
+    public void activate() {
         if (this.isConnectedToNetwork.getValue()) {
             throw new IllegalStateException("Market link is already active.");
         }

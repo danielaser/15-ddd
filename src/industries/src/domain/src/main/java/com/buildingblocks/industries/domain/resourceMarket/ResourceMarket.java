@@ -58,15 +58,15 @@ public class ResourceMarket extends AggregateRoot<ResourceMarketId> {
         apply(new DepletedMarketSupply(id, resourceType, updatedAvailableResources));
     }
 
-    public void ExecuteTrade(String id, String tradeType, String resourceType, Integer totalResourcesPrice, Integer resourceQuantity) {
+    public void executeTrade(String id, String tradeType, String resourceType, Integer totalResourcesPrice, Integer resourceQuantity) {
         apply(new ExecutedTrade(id, tradeType, resourceType, totalResourcesPrice, resourceQuantity));
     }
 
-    public void RefillMarketSupply(String id, String resourceType, Integer addedResourceQuantity, List<String> updatedAvailableResources, Integer updatedResourcePrice) {
+    public void refillMarketSupply(String id, String resourceType, Integer addedResourceQuantity, List<String> updatedAvailableResources, Integer updatedResourcePrice) {
         apply(new RefilledMarketSupply(id, resourceType, addedResourceQuantity, updatedAvailableResources, updatedResourcePrice));
     }
 
-    public void UpdateResourcePrice(String id, String resourceType, Integer oldResourcePrice, Integer newResourcePrice) {
+    public void updateResourcePrice(String id, String resourceType, Integer oldResourcePrice, Integer newResourcePrice) {
         apply(new UpdatedResourcePrice(id, resourceType, oldResourcePrice, newResourcePrice));
     }
     // endregion
