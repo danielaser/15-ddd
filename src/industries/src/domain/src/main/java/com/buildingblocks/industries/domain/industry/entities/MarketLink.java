@@ -5,7 +5,6 @@ import com.buildingblocks.industries.domain.industry.values.IsConnectedToNetwork
 import com.buildingblocks.industries.domain.industry.values.MarketLinkId;
 import com.buildingblocks.industries.domain.industry.values.Origin;
 import com.buildingblocks.shared.domain.generic.Entity;
-import com.buildingblocks.shared.domain.utils.ValueValidator;
 
 public class MarketLink extends Entity<MarketLinkId> {
     private Origin origin;
