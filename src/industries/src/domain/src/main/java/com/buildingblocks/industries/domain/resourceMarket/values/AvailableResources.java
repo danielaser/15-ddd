@@ -4,6 +4,7 @@ import com.buildingblocks.industries.domain.industry.values.Level;
 import com.buildingblocks.shared.domain.generic.IValueObject;
 import com.buildingblocks.shared.domain.utils.ValueValidator;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AvailableResources implements IValueObject {
@@ -25,5 +26,20 @@ public class AvailableResources implements IValueObject {
 
     public List<String> getValue() {
         return value;
+    }
+
+    public AvailableResources reduceQuantity(int quantityToRemove) {
+        if (quantityToRemove > 0 && quantityToRemove <= value.size()) {
+            List<String> newValue = new ArrayList<>(value);
+            for (int i = 0; i < quantityToRemove; i++) newValue.remove(0);
+            return new AvailableResources(newValue);
+        }
+        return this;
+    }
+
+    public AvailableResources increaseQuantity(int quantityToAdd, String resourceType) {
+        List<String> newValue = new ArrayList<>(value);
+        for (int i = 0; i < quantityToAdd; i++) newValue.add(resourceType);
+        return new AvailableResources(newValue);
     }
 }
